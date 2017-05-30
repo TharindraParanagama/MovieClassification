@@ -25,7 +25,7 @@ the creator(chuansun76) of this datset had scraped 5000+ movies from IMDB websit
 Data preprocessing
 First we chose the most relevant features which we thought would be meaningful features that would directly impact the rating of a movie.
 
-Feature selection/Inputs 
+Feature selection/Inputs :
 num_critic_for_reviews(as # of critics)
 movie_facebook_likes(as Total likes for the movie)
 director_facebook_likes(as Director’s FB likes)
