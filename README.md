@@ -65,7 +65,16 @@ Now we have to determine the labels of the features for that we used K-Means clu
 
 Designing of the neural network(Supervised Learning Technique)
 
-We chose to create a multi-layer neural network.So first we declared the hyper parameters which were training epoches, number of neurons in the hidden layer one & two and the learning rate which were 2000, 100, 50 and 0.01.Then we declared two placeholders(X & Y) to facilitate the input process of features and targets during runtime. Then each layer's weights and biases were initialized to random values. The activation functions on the hidden layers were sigmoid(which gives an output between 0 & 1) and the final ouput layer had the softmax function(outputs a probabilistic value).We used the cross entropy function to calculate the cost at each epoch and gradient descent optimzer as our optimization function.This optimizer makes sure the cost function is minimized during each epoch of the learning process by a fraction of the learning rate. The correct predictions are determined by checking the output provided by the network with the expected output on testing data. Then the accuracy is computed as a propotion of correct predictions over the entire number of test data.
+We chose to create a multi-layer neural network.So first we declared the hyper parameters which were training epoches, number of neurons in the hidden layer one & two and the learning rate which were 2000, 100, 50 and 0.01.Then we declared two placeholders(X & Y) to facilitate the input process of features and targets during runtime. Then each layer's weights and biases were initialized to random values. The activation functions on the hidden layers were sigmoid(which gives an output between 0 & 1) and the final ouput layer had the softmax function(outputs a probabilistic value).
+
+Training the network
+
+We use 2000 training epoches. when we input a example then make adjustments weights and biases in such a way that the cost will reduce in the next example compared to the current cost. when this is done on the entire training set we say that one epoch is complete.We used the cross entropy function to calculate the cost at each epoch and gradient descent optimzer as our optimization function.This optimizer makes sure the cost function is minimized during each epoch of the learning process by a fraction of the learning rate. 
+
+Testing the network
+
+The correct predictions are determined by checking the output provided by the network with the expected output on testing data. Then the accuracy is computed as a propotion of correct predictions over the entire number of test data.
+
 
 
 
