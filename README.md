@@ -1,7 +1,7 @@
 # MovieClassification
 A web based tool using machine learning to determine the IMDb rating of a given the movie's features.
 
-The approach to this project was as foolows:
+The approach to this project was as follows:
 
 1.Choosing a dataset 
 
@@ -47,11 +47,11 @@ Feature selection/Inputs
 
 Outputs
 
-  We chose three classes which were poor, moderate and excellent.These were denoted by 0,1 and 2 respectively.
+We chose three classes which were poor, moderate and excellent.These were denoted by 0,1 and 2 respectively.
 
 One-hot encoding
 
-  This is a binary encoding technique to convert categorical values to nominal values.Here we encoded our labels as follows:
+This is a binary encoding technique to convert categorical values to nominal values.Here we encoded our labels as follows:
 
     0=[1 0 0]
     1=[0 1 0]
@@ -74,7 +74,6 @@ We use 2000 training epoches. when we input a example then make adjustments weig
 Testing the network
 
 The correct predictions are determined by checking the output provided by the network with the expected output on testing data. Then the accuracy is computed as a propotion of correct predictions over the entire number of test data.
-
 
 
 
