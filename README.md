@@ -17,7 +17,7 @@ The approach to this project was as follows:
 
 7.Testing the network
 
-8.Predicting the rating for a new data
+8.Predicting the rating for a unseen data
 
 9.Data visualization
 
@@ -74,6 +74,15 @@ We use 2000 training epoches. when we input a example then make adjustments weig
 Testing the network
 
 The correct predictions are determined by checking the output provided by the network with the expected output on testing data. Then the accuracy is computed as a propotion of correct predictions over the entire number of test data.
+
+Predicting the rating for a unseen data
+
+We managed to achive an accuracy of 94% on predictions.The graphs for these measure are attached above.
+
+Data visualization
+
+We used Tablue for our vizualization tasks.We visually represented sum of feature with their pertaining labels.
+
 
 
 
