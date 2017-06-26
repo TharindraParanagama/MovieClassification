@@ -1,5 +1,5 @@
 # MovieClassification
-A web based tool using machine learning to determine the IMDb rating of a given the movie's features.
+A web based tool using machine learning to determine the IMDb rating given a movie's features.
 
 The approach to this project was as follows:
 
@@ -17,7 +17,7 @@ The approach to this project was as follows:
 
 7.Testing the network
 
-8.Predicting the rating for a unseen data
+8.Predicting the rating for unseen data
 
 9.Data visualization
 
@@ -25,11 +25,11 @@ The approach to this project was as follows:
 
 Choosing a Dataset
 
-We found a ideal dataset for our purpose on a famous website for dataset which is Kaggle.com.The link to the dataset is as follows:https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset.
+We found an ideal dataset for our purpose on a famous website for datasets which is Kaggle.com.The link to the dataset is as follows:https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset.
 
 Brief introduction about the dataset
 
-the creator(chuansun76) of this datset had scraped 5000+ movies from IMDB website using a Python library called "scrapy".After the web scapping this datset consisted of 28 variables(or columns) for 5043 movies and 4906 posters (998MB), spanning across 100 years in 66 countries. There are 2399 unique director names, and thousands of actors/actresses. Below are the 28 variables:
+The creator(chuansun76) of this datset had scraped 5000+ movies from IMDB website using a Python library called "scrapy".After the web scapping this datset consisted of 28 variables(or columns) for 5043 movies and 4906 posters (998MB), spanning across 100 years in 66 countries. There are 2399 unique director names, and thousands of actors/actresses. Below are the 28 variables:
 
 "movie_title" "color" "num_critic_for_reviews" "movie_facebook_likes" "duration" "director_name" "director_facebook_likes" "actor_3_name" "actor_3_facebook_likes" "actor_2_name" "actor_2_facebook_likes" "actor_1_name" "actor_1_facebook_likes" "gross" "genres" "num_voted_users" "cast_total_facebook_likes" "facenumber_in_poster" "plot_keywords" "movie_imdb_link" "num_user_for_reviews" "language" "country" "content_rating" "budget" "title_year" "imdb_score" "aspect_ratio"
 
@@ -75,13 +75,24 @@ Testing the network
 
 The correct predictions are determined by checking the output provided by the network with the expected output on testing data. Then the accuracy is computed as a propotion of correct predictions over the entire number of test data.
 
-Predicting the rating for a unseen data
+Predicting the rating for an unseen data
 
-We managed to achive an accuracy of 94% on predictions.The graphs for these measure are attached above.
+We managed to achive an accuracy of 94% on predictions.The graphs that display the accuracy at each epoch is attached above.
 
 Data visualization
 
-We used Tablue for our vizualization tasks.We visually represented sum of feature with their pertaining labels.
+We used Tablue for our vizualization tasks.We wanted to check the spread of the sum of features with their pertaining labels.the resulting visualization diagram is attached above.
+
+Creation of a webpage to display results
+
+Finally we wanted to develop a user interface to make the application more intutive so we used HTML,CSS,Bootstrap to create a web based application.Python's Flask framewrok(an implementation of the web frameworks concept) was used to our python source code and the web application.
+
+Application can be operated as follows:
+
+First run the file called Interface.py (This will start the Flask implemented server)
+Afterwards the index.html page should be opened via a web browser
+And by pressing the button Launch model the result shows the prediction and actual rating respectively.
+
 
 
 
