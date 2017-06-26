@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RateMe</title>
+</head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="shortcut icon" href="MoviePosters/favicon.gif" type="image/x-icon">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-layers.min.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/loader1.js"></script>
+        <script src="js/loader2.js"></script>
+        <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+        </noscript>
+  
+ 
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top menu on small screens -->
+
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+<div class="page-header">RateMe</div>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+  
+  <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img src="MoviePosters/TheCircle.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
+      <img src="MoviePosters/Kong.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
+      <img src="MoviePosters/Faster.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
+   </div>
+    
+   <div class="w3-quarter">
+      <img src="MoviePosters/Martian.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
+      <img src="MoviePosters/Transformers.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
+      <img src="MoviePosters/JackReacher.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="MoviePosters/Logan.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
+      <img src="MoviePosters/Deadpool.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
+      <img src="MoviePosters/BVsS.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
+    </div>
+
+    <div class="w3-quarter">
+      <img src="MoviePosters/SpiderMan.jpg"  style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
+      <img src="MoviePosters/Inception.jpg"  style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
+      <img src="MoviePosters/PirateOfTheCarribean.jpg"  style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
+    </div>
+  </div>
+</div>
+<br>
+<div class="form-group">
+	<center>
+    <label for="exampleTextarea"><h3>Output</h3></label></br>
+<label ><h1 id="text-out"></h1></label>
+	</center>
+    <!--<textarea id="text-out" class="form-control" id="exampleTextarea" rows="10" cols="1"></textarea>-->
+  </div>
+<center>
+	<button id="submit-button" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch Demo Model
+</button>
+</center>
+<hr>
+	<script>
+	    $("#submit-button").click(function () {
+                $.ajax({
+                    url: 'http://localhost:3030/getRating',
+                    method: 'POST',
+                    success: function (msg) {
+                        console.log(msg);
+			$('#text-out').text(msg);
+                    },
+                    error: function (request, status, errorThrown) {
+                        $('#loading-image').hide();
+                        $.LoadingOverlay("hide");
+                        alert("There was an error in processing the request. Please retry!")
+                    }
+                });
+            });
+        </script>
+
+</body>
+</html>
+
