@@ -94,19 +94,7 @@ def getFinalRating():
 
         initial = tf.global_variables_initializer()
 
-        # initialization of all variables
-        with tf.Session() as sess:
-            sess.run(initial)
-            saver = tf.train.Saver()
-            saver.save(sess, "/home/tharindra/PycharmProjects/WorkBench/save.ckpt")
-            print("Model saved")
-            saver.restore(sess, "/home/tharindra/PycharmProjects/WorkBench/save.ckpt")
-            print("Model restored")
-            predict, actual = (tf.argmax(a, 1), tf.argmax(Y, 1))
-            value =  str(sess.run((predict, actual), feed_dict={X: [[14, 0, 946, 10443, 660]], Y: [[1, 0, 0]]}))
-            print value
-            with open("/home/tharindra/PycharmProjects/WorkBench/DataMiningAssignment/hello.txt", "w") as f:
-                f.write(value)
+   
             # training loop over the number of epoches
 
             for epoch in range(training_epochs):
@@ -118,6 +106,20 @@ def getFinalRating():
                 writer.add_summary(summary, epoch)
                 # print accuracy for each epoch
                 print(epoch, acc)
+                
+             # initialization of all variables    
+        with tf.Session() as sess:
+        sess.run(initial)
+        saver = tf.train.Saver()
+        saver.save(sess, "/home/tharindra/PycharmProjects/WorkBench/save.ckpt")
+        print("Model saved")
+        saver.restore(sess, "/home/tharindra/PycharmProjects/WorkBench/save.ckpt")
+        print("Model restored")
+        predict, actual = (tf.argmax(a, 1), tf.argmax(Y, 1))
+        value =  str(sess.run((predict, actual), feed_dict={X: [[14, 0, 946, 10443, 660]], Y: [[1, 0, 0]]}))
+        print value
+        with open("/home/tharindra/PycharmProjects/WorkBench/DataMiningAssignment/hello.txt", "w") as f:
+            f.write(value)
 
 
             return predict,actual
