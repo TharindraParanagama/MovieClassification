@@ -1,7 +1,7 @@
 # MovieClassification
 A web based tool using machine learning to determine the IMDb rating given a movie's features.
 
-The approach to this project was as follows:
+_The approach to this project was as follows:_
 
 1.Choosing a dataset 
 
@@ -27,7 +27,7 @@ The approach to this project was as follows:
 
 We found an ideal dataset for our purpose on a famous website for datasets which is Kaggle.com.The link to the dataset is as follows:https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset.
 
-Brief introduction about the dataset
+_Brief introduction about the dataset_
 
 The creator(chuansun76) of this datset had scraped 5000+ movies from IMDB website using a Python library called "scrapy".After the web scapping this datset consisted of 28 variables(or columns) for 5043 movies and 4906 posters (998MB), spanning across 100 years in 66 countries. There are 2399 unique director names, and thousands of actors/actresses. Below are the 28 variables:
 
@@ -37,7 +37,7 @@ The creator(chuansun76) of this datset had scraped 5000+ movies from IMDB websit
 
 First we chose the most relevant features which we thought would be meaningful features that would directly impact the rating            of a movie.
 
-Feature selection/Inputs 
+_Feature selection/Inputs_ 
 
   num_critic_for_reviews(as # of critics)
   movie_facebook_likes(as Total likes for the movie)
@@ -45,11 +45,11 @@ Feature selection/Inputs
   actor_1_facebook_likes(as Main Actor’s FB likes)
   gross(as Revenue from the movie)
 
-Outputs
+_Outputs_
 
 We chose three classes which were poor, moderate and excellent.These were denoted by 0,1 and 2 respectively.
 
-One-hot encoding
+_One-hot encoding_
 
 This is a binary encoding technique to convert categorical values to nominal values.Here we encoded our labels as follows:
 
@@ -59,7 +59,7 @@ This is a binary encoding technique to convert categorical values to nominal val
 
 We also had to get rid of missing values for which we wrote a code to check whether any of the cells contained missing values if so we eliminated all such records.This reduced the dataset to 4149 records.
 
-Clustering(Unsupervised Learning Technique)
+_Clustering(Unsupervised Learning Technique)_
 
 Now we have to determine the labels of the features for that we used K-Means clutering algorithm based on the similarities of the input features.This algorithm was easyly implemented using Google's scikit-learn machine learning library.
 
@@ -87,13 +87,13 @@ We used Tablue for our vizualization tasks.We wanted to check the spread of the 
 
 Finally we wanted to develop a user interface to make the application more intutive so we used HTML,CSS,Bootstrap to create a web based application.Python's Flask framewrok(an implementation of the web frameworks concept) was used to our python source code and the web application.
 
-**_Application can be operated as follows:_**
+_Application can be operated as follows:_
 
 First run the file called Interface.py (This will start the Flask implemented server)
 Afterwards the index.html page should be opened via a web browser
 And by pressing the button Launch model the result shows the prediction and actual rating respectively.
 
-_**File descriptions**_
+_File descriptions_
 
 **.gitignore**-This file can be used to specify the files which should be ignoredwhen syncing the local repo with the original repo.
 
